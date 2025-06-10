@@ -64,19 +64,21 @@ Each model consists of **fields** that map to database columns.
 
 Fields are made up of 4 different parts: 
 - **Field name:** (required, eg product Title)
+
 - **Data type:** (required, eg String, boolean, Integer)
 - **Field type modifier:** (optional, we use **?**)
 - **Attributes:** (optional, they start with **@** symbol.)
 
 #### Field Attributes
-- **@:** marks th field as primary key
-- **@default:** sets default value (eg, @default(now()))
-- **@unique:** ensures unique values to a field.
-- **@updatedAt:** Auto-update timestamp whenever record is updated.
-- **@map:** maps the field to a different column name (eg, firstName @map("first_name"))
-- **@relation:** defines relationships between models.
-- **@@id:** a model attribute that defines a composite primary key (eg, @@id([field1, field2]))
-- **@@unique:** a model attribute ensures  a composite unique constraint
+- **@:** It marks the field as primary key
+- **@default:** It sets default value. eg, @default(now())
+
+- **@unique:** It ensures a field has unique values.
+- **@updatedAt:** It auto-updates timestamp whenever record is updated.
+- **@map:** It maps the field to a different column name. eg, firstName @map("first_name")
+- **@relation:** It defines relationships between models.
+- **@@id:** a model attribute that defines a composite primary key. eg, @@id([field1, field2])
+- **@@unique:** a model attribute that ensures  a composite unique constraint on multiple fields. 
 - **@@map:** a model attribute that maps a model to different table name.
 
 Here is an example with a Blog post model:
@@ -120,20 +122,24 @@ npm install @prisma/client
 ## CRUD Operations
 ### Create
 - ```create()```: creates a single record
+
 - ```createMany()```: creates multiple records.
 - ```createManyAndReturn()```: returns objects only.
 
 ### Read
 - ```findMany()```: gets all records
+
 - ```findFirst()```: gets the first record that matches a criteria and applies the filter using ```where```
 - ```select```: used to specify the fields you want returned.
 
 ### Update
 - ```update()```: updates a single record
+
 - ```updateMany()```: updates multiple records
 
 ### Delete
 - ```delete()```: deletes a single record
+
 - ```deleteMany()```: deletes multiple records
 
 ## Relationships
